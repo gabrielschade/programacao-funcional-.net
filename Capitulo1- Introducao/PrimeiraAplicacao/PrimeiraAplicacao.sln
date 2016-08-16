@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeiraAplicacao", "PrimeiraAplicacao\PrimeiraAplicacao.csproj", "{B0A324C1-717F-40C5-97C8-4725A3F96A8C}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "PrimeiraAplicacao.Funcional", "PrimeiraAplicacao.Funcional\PrimeiraAplicacao.Funcional.fsproj", "{9CEF2429-9B63-4308-94D1-8789343D388C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B0A324C1-717F-40C5-97C8-4725A3F96A8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0A324C1-717F-40C5-97C8-4725A3F96A8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0A324C1-717F-40C5-97C8-4725A3F96A8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0A324C1-717F-40C5-97C8-4725A3F96A8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CEF2429-9B63-4308-94D1-8789343D388C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CEF2429-9B63-4308-94D1-8789343D388C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CEF2429-9B63-4308-94D1-8789343D388C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CEF2429-9B63-4308-94D1-8789343D388C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
