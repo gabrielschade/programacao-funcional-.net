@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PrimeiraAplicacao
 {
-    public class Somador
+    public class Calculadora
     {
         public int ElevaNumeroAoQuadrado(int numero)
         {
