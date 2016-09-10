@@ -8,8 +8,8 @@ namespace ConceitosFundamentais
 {
     public class PeriodoDeTempoImutavel
     {
-        public DateTime DataInicial { get; private set; }
-        public DateTime DataFinal { get; private set; }
+        public DateTime DataInicial { get; }    
+        public DateTime DataFinal { get; }
 
         public PeriodoDeTempoImutavel(DateTime dataInicial, DateTime dataFinal)
         {
@@ -17,10 +17,17 @@ namespace ConceitosFundamentais
             DataFinal = dataFinal;
         }
         
-        public bool VerificarSeDataEstaEntreOPeriodo(DateTime dataParaTestar)
+        public static PeriodoDeTempoImutavel AdicionarDias(PeriodoDeTempoImutavel periodo, int dias)
         {
-            return dataParaTestar.CompareTo(DataInicial) >= 0
-                    && dataParaTestar.CompareTo(DataFinal) <= 0;
+            return new PeriodoDeTempoImutavel
+                    (periodo.DataInicial.AddDays(dias), periodo.DataFinal.AddDays(dias));
+        }
+
+        public static bool VerificarSeDataEstaEntreOPeriodo
+                (PeriodoDeTempoImutavel periodo, DateTime dataParaTestar)
+        {
+            return dataParaTestar.CompareTo(periodo.DataInicial) >= 0
+                    && dataParaTestar.CompareTo(periodo.DataFinal) <= 0;
         }
     }
 }

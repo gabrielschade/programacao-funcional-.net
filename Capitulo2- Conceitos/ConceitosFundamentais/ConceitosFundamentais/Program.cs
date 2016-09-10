@@ -10,7 +10,7 @@ namespace ConceitosFundamentais
     {
         static void Main(string[] args)
         {
-            ExemploDeProblemaPorAlteracaoDeEstado();
+            ExemploComPeriodoImutavel();
         }
 
         static void ExemploComPeriodoImutavel()
@@ -30,10 +30,17 @@ namespace ConceitosFundamentais
             foreach (DateTime dataParaTestar in datasParaTeste)
             {
                 bool resultadoDaVerificacao =
-                periodo.VerificarSeDataEstaEntreOPeriodo(dataParaTestar);
+                    PeriodoDeTempoImutavel.VerificarSeDataEstaEntreOPeriodo(periodo,dataParaTestar);
                 Console.WriteLine(resultadoDaVerificacao);
             }
 
+            PeriodoDeTempoImutavel.AdicionarDias(periodo, 30);
+            foreach (DateTime dataParaTestar in datasParaTeste)
+            {
+                bool resultadoDaVerificacao =
+                    PeriodoDeTempoImutavel.VerificarSeDataEstaEntreOPeriodo(periodo, dataParaTestar);
+                Console.WriteLine(resultadoDaVerificacao);
+            }
             Console.ReadKey();
         }
 
