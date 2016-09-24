@@ -1,6 +1,12 @@
 ﻿open PeriodoDeTempo
 open System
 
+let exemploUsoDeExpressao numero =
+    let resultado = 
+        if numero % 2 = 0 then 2 else 0
+    
+    printfn "%i" resultado
+
 [<EntryPoint>]
 let main argv = 
     let periodo = 
@@ -19,6 +25,10 @@ let main argv =
         printfn "%b" dataEstaNoPeriodo
 
     Console.ReadKey() |> ignore
+
+ 
+    
+
+
+
     0
-
-
