@@ -10,8 +10,8 @@ let exemploUsoDeExpressao numero =
 [<EntryPoint>]
 let main argv = 
     let periodo = 
-        { DataInicial= DateTime.Parse "20/08/2016"
-        ; DataFinal =DateTime.Parse "31/08/2016" }
+        { DataInicial = DateTime.Parse "20/08/2016"
+        ; DataFinal = DateTime.Parse "31/08/2016" }
 
     let datasParaTeste =
         [|
