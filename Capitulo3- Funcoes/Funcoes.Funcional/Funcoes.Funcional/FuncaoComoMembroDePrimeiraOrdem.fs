@@ -7,7 +7,7 @@ let somaCom5 numero = numero + 5
    
 // Versão 1 do Código
 //let imprimirNomes() =
-//    let nomes = ["Gabriel"; "Rodrigo"; "Jhony"; "Gustavo"]
+//    let nomes = ["Gabriel"; "Rodrigo"; "Jhony"; "Luan"]
 //    for nome in nomes do
 //        printfn "Olá %s." nome
 
@@ -21,16 +21,20 @@ let somaCom5 numero = numero + 5
 //let imprimirNomes nomes =
 //    for nome in nomes do
 //        printfn "Olá %s." nome
-
+//
 //let imprimirDobroDosNumeros numeros =
 //    for numero in numeros do
 //        printfn "%i." ( numero * 2)
 
-let executarAcaoSobreElementos lista acao = lista |> List.iter acao
 
-let imprimir nomes = 
-    executarAcaoSobreElementos nomes (printfn "Olá %s")
+let executarAcaoSobreElementos lista acao = lista |> List.iter acao
+    
+let imprimirNomes nomes = 
+    executarAcaoSobreElementos nomes (printfn "Olá %s")    
+    
+let imprimirDobroDeUmNumero numero = 
+    printfn "%i." ( numero * 2)
 
 let imprimirDobroDosNumeros numeros = 
-    executarAcaoSobreElementos numeros (fun numero -> printfn "%i." ( numero * 2))
+    executarAcaoSobreElementos numeros (imprimirDobroDeUmNumero)    
     
