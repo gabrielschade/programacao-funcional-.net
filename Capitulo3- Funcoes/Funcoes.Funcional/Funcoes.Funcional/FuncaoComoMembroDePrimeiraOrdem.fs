@@ -4,6 +4,7 @@
 let dez = 10
 
 let somaCom5 numero = numero + 5
+let somaCom5ViaLambda = fun numero -> numero + 5
    
 // Versão 1 do Código
 //let imprimirNomes() =
@@ -37,4 +38,8 @@ let imprimirDobroDeUmNumero numero =
 
 let imprimirDobroDosNumeros numeros = 
     executarAcaoSobreElementos numeros (imprimirDobroDeUmNumero)    
+
+let imprimirDobroDosNumeros numeros = 
+    executarAcaoSobreElementos numeros 
+        (fun numero -> printfn "%i" (numero * 2) )    
     
