@@ -20,7 +20,9 @@ namespace Funcoes
 
         public static Action<int> MultiplicarEimprimirNumero(int multiplicador)
         {
-            return (numero) => Console.WriteLine(numero * multiplicador);
+            Action<int> imprimirNumero = 
+                (numero) => Console.WriteLine(numero * multiplicador);
+            return imprimirNumero;
         }
 
         public static void ImprimirNumeros(List<int> numeros, int multiplicador)

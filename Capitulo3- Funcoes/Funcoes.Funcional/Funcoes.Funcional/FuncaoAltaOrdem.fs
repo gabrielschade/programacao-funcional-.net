@@ -36,11 +36,20 @@ let multiplicarEimprimirNumero multiplicador numero =
 let imprimirDobroDosNumeros numeros = 
     executarAcaoSobreElementos numeros (imprimirDobroDeUmNumero)    
 
-let imprimirDobroDosNumeros numeros = 
+let imprimirDobroDosNumerosViaLambda numeros = 
     executarAcaoSobreElementos numeros 
         (fun numero -> printfn "%i" (numero * 2) )    
 
+let imprimirListaDeNumerosComFuncaoAninhada multiplicador numeros = 
+    let imprimirNumero = multiplicarEimprimirNumero multiplicador
+    executarAcaoSobreElementos numeros imprimirNumero 
+
 let imprimirListaDeNumeros multiplicador numeros = 
-    executarAcaoSobreElementos numeros 
-        (fun numero -> 
-             multiplicarEimprimirNumero multiplicador numero )    
+    executarAcaoSobreElementos numeros (multiplicarEimprimirNumero multiplicador) 
+
+let imprimirListaDeNumerosComPipeFoward multiplicador numeros = 
+    multiplicarEimprimirNumero multiplicador
+    |> executarAcaoSobreElementos numeros 
+
+let imprimirListaDeNumerosComPipeBackward multiplicador numeros = 
+    executarAcaoSobreElementos numeros <| multiplicarEimprimirNumero multiplicador
