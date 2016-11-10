@@ -47,9 +47,3 @@ let imprimirListaDeNumerosComFuncaoAninhada multiplicador numeros =
 let imprimirListaDeNumeros multiplicador numeros = 
     executarAcaoSobreElementos numeros (multiplicarEimprimirNumero multiplicador) 
 
-let imprimirListaDeNumerosComPipeFoward multiplicador numeros = 
-    multiplicarEimprimirNumero multiplicador
-    |> executarAcaoSobreElementos numeros 
-
-let imprimirListaDeNumerosComPipeBackward multiplicador numeros = 
-    executarAcaoSobreElementos numeros <| multiplicarEimprimirNumero multiplicador
