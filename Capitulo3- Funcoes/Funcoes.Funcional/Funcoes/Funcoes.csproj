@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="FuncaoAltaOrdem.cs" />
     <Compile Include="FuncaoComoMembroDePrimeiraOrdem.cs" />
+    <Compile Include="FuncoesAninhadas.cs" />
     <Compile Include="VerificadorNumeroPar.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
