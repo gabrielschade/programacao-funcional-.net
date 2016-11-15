@@ -1,4 +1,6 @@
-﻿module FuncoesAninhadas
+﻿
+
+module FuncoesAninhadas
 
 let escreveSeNumeroEParOuImpar numero =
     let verificaSeONumeroEPar() = numero % 2 = 0
@@ -9,3 +11,4 @@ let escreveSeNumeroEParOuImpar numero =
         escreveNumeroPar()
     else
         escreveNumeroImpar()
+
