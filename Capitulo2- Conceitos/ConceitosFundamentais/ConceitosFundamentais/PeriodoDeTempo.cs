@@ -11,10 +11,17 @@ namespace ConceitosFundamentais
         public DateTime DataInicial { get; set; }
         public DateTime DataFinal { get; set; }
 
-        public bool VerificarSeDataEstaEntreOPeriodo(DateTime dataParaTestar)
+        public bool VerificarSeDataEstaEntreOPeriodo
+            (DateTime dataParaTestar)
         {
             return dataParaTestar.CompareTo(DataInicial) >= 0
                     && dataParaTestar.CompareTo(DataFinal) <= 0;
+        }
+
+        public void AdicionarDias(int dias)
+        {
+            DataInicial.AddDays(dias);
+            DataFinal.AddDays(dias);
         }
     }
 }
