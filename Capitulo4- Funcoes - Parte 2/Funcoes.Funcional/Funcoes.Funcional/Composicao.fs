@@ -20,7 +20,7 @@ let variasOperacoes valor1 valor2=
     |> somaCom2 
     |> multiplicaPor2
 
-let exemploInverso valor1 valor2 =
+let exemploInverso valor1 valor2 = 
     somaCom10 <| valor1 + valor2
 
 let numeroImparOperadorInverso valor =

@@ -14,3 +14,4 @@ let multiplicaPor = (*)
 
 let multiplicaPor2 = multiplicaPor 2
 let multiplicaPor4 = multiplicaPor 4
+ 

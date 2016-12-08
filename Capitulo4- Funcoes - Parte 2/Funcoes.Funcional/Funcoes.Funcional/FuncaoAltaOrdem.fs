@@ -47,3 +47,8 @@ let imprimirListaDeNumerosComFuncaoAninhada multiplicador numeros =
 let imprimirListaDeNumeros multiplicador numeros = 
     executarAcaoSobreElementos numeros (multiplicarEimprimirNumero multiplicador) 
 
+
+
+
+
+
