@@ -10,7 +10,9 @@ namespace Funcoes
     {
         static void Main(string[] args)
         {
-            ObterNumerosParesDeUmaLista();
+            for (int i = 0; i < 11; i++)
+                Console.WriteLine(Recursao.Fatorial(i));
+            Console.ReadKey();
         }
 
         private static void ObterNumerosParesDeUmaLista()
@@ -23,7 +25,7 @@ namespace Funcoes
 
             numerosPares = numeros.Where(metodoParaFiltrar);
             numerosPares = numeros.Where(metodoParaFiltrarViaLambda);
-            numerosPares = numeros.Where( numero => numero % 2 == 0);
+            numerosPares = numeros.Where(numero => numero % 2 == 0);
         }
     }
 }

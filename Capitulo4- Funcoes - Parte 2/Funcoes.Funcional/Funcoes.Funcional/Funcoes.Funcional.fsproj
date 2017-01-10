@@ -54,9 +54,9 @@
     <Compile Include="FuncaoAltaOrdem.fs" />
     <Compile Include="Operadores.fs" />
     <Compile Include="Composicao.fs" />
-    <Compile Include="Program.fs" />
     <Compile Include="FuncoesAninhadas.fs" />
     <Compile Include="Modulos.fs" />
+    <Compile Include="Program.fs" />
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>

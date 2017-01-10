@@ -61,5 +61,10 @@ let somaComTresEVerificaSeONumeroEImparUsandoCompor =
 let somaDepoisMultiplica =
     compor ((+)1) ((*)2)
 
-let somaDepoisMultiplicaUsandoOOperador =
-    (+)1 >> (*)
+let somaDepoisMultiplicaUsandoOOperador valorParaSomar =
+    (+)valorParaSomar >> (*)
+
+let resultado = somaDepoisMultiplicaUsandoOOperador 1 1 2
+
+let dobraDepoisSoma =
+    (+) << (*)2

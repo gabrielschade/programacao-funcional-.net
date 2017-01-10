@@ -47,6 +47,7 @@
     <Compile Include="FuncaoComoMembroDePrimeiraOrdem.cs" />
     <Compile Include="FuncoesAninhadas.cs" />
     <Compile Include="Modulos.cs" />
+    <Compile Include="Recursao.cs" />
     <Compile Include="VerificadorNumeroPar.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
