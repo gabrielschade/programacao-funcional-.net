@@ -15,6 +15,10 @@ namespace Tipos
         public void CriandoTuplas()
         {
             Tuple<int, int, int> tupla1 = new Tuple<int, int, int>(1, 2, 3);
+            int item1 = tupla1.Item1;
+            int item2 = tupla1.Item2;
+            int item3 = tupla1.Item3;
+
             Tuple<int, bool, string> tupla2 = new Tuple<int, bool, string>(1, true, "Gabriel");
             Tuple<int, bool> tupla3 = new Tuple<int, bool>(3, false);
 
@@ -25,6 +29,9 @@ namespace Tipos
                 new Tuple<Func<int, int, int>, bool>(Soma, false);
 
             Tuple<bool, int> tupla6 = new Tuple<bool, int>(false, 2);
+
+
+
         }
     }
 }
