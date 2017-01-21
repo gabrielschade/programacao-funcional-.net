@@ -24,10 +24,10 @@ let verificaSeONumeroParOuZeroComPatternMatching numero =
     | numero when numero % 2 = 0 -> "Par"
     | _ -> "Ímpar"
 
-let fatorial numero =
-    let mutable acumulador = numero
-    for valor = numero-1 downto 1 do
-        acumulador <- acumulador * valor
+let fatorial numeroParaCalcularFatorial =
+    let mutable acumulador = numeroParaCalcularFatorial
+    for numero = numeroParaCalcularFatorial-1 downto 1 do
+        acumulador <- acumulador * numero
     acumulador
 
 let rec fatorialComPatternMatching numero = 
@@ -35,3 +35,12 @@ let rec fatorialComPatternMatching numero =
     | 0 | 1 -> 1
     | 2 -> 2
     | _ -> numero * fatorialComPatternMatching (numero-1)
+
+let fatorialComFuncaoAninhada numero =
+    let rec fatorial numero =
+        match numero with
+        | 0 | 1 -> 1
+        | 2 -> 2
+        | _ -> numero * fatorialComPatternMatching (numero-1)
+
+    fatorial numero
