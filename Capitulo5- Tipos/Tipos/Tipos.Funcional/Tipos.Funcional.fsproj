@@ -51,8 +51,10 @@
     <None Include="App.config" />
     <Compile Include="ControleFluxo.fs" />
     <Compile Include="Apelidos.fs" />
-    <Compile Include="Program.fs" />
     <Compile Include="Tuplas.fs" />
+    <Compile Include="Records.fs" />
+    <Compile Include="DiscriminatedUnions.fs" />
+    <Compile Include="Program.fs" />
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
