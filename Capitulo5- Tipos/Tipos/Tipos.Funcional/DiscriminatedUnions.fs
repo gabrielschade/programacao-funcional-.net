@@ -86,8 +86,10 @@ let criarCliente id nome sobrenome =
     { Id = id ; Nome = nome; Sobrenome = sobrenome }
     
 let id = 1
-let nome = Nome "Gabriel"
 let sobrenome = Sobrenome "Schade"
+let nome = Nome "Gabriel"
+let (Nome nome2) = nome
+
 
 let cliente1 = criarCliente id nome sobrenome
-let clienteQueNaoCompila = criarCliente id sobrenome nome
+//let clienteQueCausaErroDeCompilacao  = criarCliente id sobrenome nome

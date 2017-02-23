@@ -54,6 +54,7 @@
     <Compile Include="Tuplas.fs" />
     <Compile Include="Records.fs" />
     <Compile Include="DiscriminatedUnions.fs" />
+    <Compile Include="Optional.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
   <PropertyGroup>
