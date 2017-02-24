@@ -16,3 +16,20 @@ if talvezUmaString.IsSome
     else printfn "Valor inválido"
 
 printfn "%s" talvezUmaString.Value
+
+let testeComValor = Some "Testando valor nulo"
+let testeSemValor = None
+
+let lenght =
+    match testeComValor with
+    | Some texto -> texto.Length
+    | None -> 0
+
+let stringQueVeioDoCSharp = "Teste com string do C#"
+let stringParaUsarNaAplicacao =
+    match stringQueVeioDoCSharp with
+    | null -> None
+    | valor -> Some valor
+
+let tres = 3
+let talvezTres = Option.map (fun x -> x) (Some tres)
