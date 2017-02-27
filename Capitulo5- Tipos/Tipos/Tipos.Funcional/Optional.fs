@@ -30,6 +30,3 @@ let stringParaUsarNaAplicacao =
     match stringQueVeioDoCSharp with
     | null -> None
     | valor -> Some valor
-
-let tres = 3
-let talvezTres = Option.map (fun x -> x) (Some tres)

@@ -55,6 +55,7 @@
     <Compile Include="Records.fs" />
     <Compile Include="DiscriminatedUnions.fs" />
     <Compile Include="Optional.fs" />
+    <Compile Include="UnidadesMedida.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
   <PropertyGroup>
