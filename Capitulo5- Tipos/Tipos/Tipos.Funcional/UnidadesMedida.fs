@@ -33,3 +33,17 @@ let somaEmMetros = quilometrosConvertidos + metros
 
 let inteiro = 30
 let quilometrosAPartirDeUmInteiro = inteiro * 1<km>
+
+let elevarAoQuadrado (valor: int<_>) = 
+    valor * valor
+
+let resultado1 = elevarAoQuadrado 2<m>
+let resultado2 = elevarAoQuadrado 3<km>
+let resultado3 = elevarAoQuadrado 4<h>
+
+let multiplicarValores (valor1: int<'u>) (valor2: int<'u>) =
+    valor1 * valor2
+
+let resultado4 = multiplicarValores 2<m> 10<m>
+let resultado5 = multiplicarValores 3<km> 4<km>
+let resultadoErrado = multiplicarValores 3<m> 10<km>
