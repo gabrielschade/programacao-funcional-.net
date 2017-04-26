@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpWeb", "CSharpWeb\CSha
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSharpOO", "FSharpOO\FSharpOO.fsproj", "{D115470A-1CA1-42FC-BE30-BF389A1BDAEB}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSharpWeb", "FSharpWeb\FSharpWeb.fsproj", "{CFAD0630-7485-49CB-A3FA-94687F775D45}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D115470A-1CA1-42FC-BE30-BF389A1BDAEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D115470A-1CA1-42FC-BE30-BF389A1BDAEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D115470A-1CA1-42FC-BE30-BF389A1BDAEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFAD0630-7485-49CB-A3FA-94687F775D45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFAD0630-7485-49CB-A3FA-94687F775D45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFAD0630-7485-49CB-A3FA-94687F775D45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFAD0630-7485-49CB-A3FA-94687F775D45}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
