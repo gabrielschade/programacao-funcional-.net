@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpWeb", "CSharpWeb\CSha
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSharpOO", "FSharpOO\FSharpOO.fsproj", "{D115470A-1CA1-42FC-BE30-BF389A1BDAEB}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSharpWeb", "FSharpWeb\FSharpWeb\FSharpWeb.fsproj", "{6A8C25A7-A896-41EE-9E8C-CA0C228E0BC3}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSharpWeb", "FSharpWeb\FSharpWeb.fsproj", "{6A8C25A7-A896-41EE-9E8C-CA0C228E0BC3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

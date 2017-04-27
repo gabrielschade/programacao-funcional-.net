@@ -130,6 +130,7 @@
     <Compile Include="Controllers\ValuesController.fs" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\OlaMundo.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
@@ -140,7 +141,7 @@
     </Compile>
     <Content Include="packages.config" />
     <Content Include="readme.txt" />
-    <Content Include="Views\Home\OlaMundo.cshtml" />
+    
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Antlr3.Runtime">
