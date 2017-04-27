@@ -140,6 +140,7 @@
     </Compile>
     <Content Include="packages.config" />
     <Content Include="readme.txt" />
+    <Content Include="Views\Home\OlaMundo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Antlr3.Runtime">
