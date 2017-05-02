@@ -108,6 +108,7 @@
     <Compile Include="Operadores.fs" />
     <Compile Include="Wrappers.fs" />
     <Compile Include="Persistencia.fs" />
+    <Compile Include="Repositorio.fs" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.css.map" />
@@ -159,6 +160,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Net.Http.Formatting">
       <HintPath>$(SolutionDir)\packages\Microsoft.AspNet.WebApi.Client.5.2.2\lib\net45\System.Net.Http.Formatting.dll</HintPath>

@@ -63,13 +63,10 @@ type Global() =
             { controller = "Home"; action = "Index"; id = UrlParameter.Optional } // Parameter defaults
         ) |> ignore
 
-    static member InicializarBancoDados() =
-        ignore()
 
-    member x.Application_Start() =
+    member this.Application_Start() =
         AreaRegistration.RegisterAllAreas()
         GlobalConfiguration.Configure(Action<_> Global.RegisterWebApi)
         Global.RegisterFilters(GlobalFilters.Filters)
         Global.RegisterRoutes(RouteTable.Routes)
-        Global.InicializarBancoDados()
         BundleConfig.RegisterBundles BundleTable.Bundles

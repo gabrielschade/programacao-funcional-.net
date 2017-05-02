@@ -1,6 +1,7 @@
 ﻿module Persistencia
 
 open Operadores
+open Wrappers
 
 type Tabela<'e> = {
     Arquivo: string
@@ -12,15 +13,45 @@ type Contexto = {
     Textos: Tabela<string>
 }
 
-let inicializarTabela diretorioBase arquivo dadosIniciais =
+let salvarTabela tabela =
+    Json.serializar tabela.Dados
+    |> Arquivo.salvar tabela.Arquivo
+    tabela
+
+let carregarTabela<'e> arquivo =
+    let dados = Arquivo.abrir arquivo
+                |> Json.desserializar<'e list>
     {
-        Arquivo = diretorioBase ^ arquivo
+        Arquivo = arquivo
+        Dados = dados
+    }
+ 
+let inicializarTabela arquivo dadosIniciais =
+    let tabela = {
+        Arquivo = arquivo
         Dados = dadosIniciais
     }
+    salvarTabela tabela
 
-//let x = inicializarTabela<int> "a" "b" List.empty
-//    let y = "a"  "b"
-    
-//let salvar<'e> (entidade: 'e) =
-//    FSharpWeb.Util.Wrappers.Json.serializar entidade
-//    |> Arquivo.salvar "C:"
+let criarTabelaParaAplicacao<'e> diretorioBase arquivo dadosIniciais =
+    let arquivoCompleto = diretorioBase ^ arquivo
+    match (Arquivo.existe arquivoCompleto) with
+    | true -> carregarTabela<'e> arquivoCompleto
+    | false -> inicializarTabela arquivoCompleto dadosIniciais
+
+let inteirosIniciais =
+    [
+    for valor in 1..100 
+        do 
+        if valor % 2 = 0 then 
+            yield valor
+            yield valor * valor * valor
+    ]
+
+let inicializarContexto diretorioBase =
+    {
+        Inteiros = criarTabelaParaAplicacao diretorioBase "/Inteiros.json" 
+                    inteirosIniciais
+        Textos = criarTabelaParaAplicacao diretorioBase "/Textos.json" 
+                    [ "teste" ; "texto"]
+    }
