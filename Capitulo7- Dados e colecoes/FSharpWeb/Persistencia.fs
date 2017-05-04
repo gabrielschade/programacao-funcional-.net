@@ -2,6 +2,7 @@
 
 open Operadores
 open Wrappers
+open Dominio
 
 type Tabela<'e> = {
     Arquivo: string
@@ -9,8 +10,9 @@ type Tabela<'e> = {
 }
 
 type Contexto = {
-    Inteiros: Tabela<int>
-    Textos: Tabela<string>
+    Clientes: Tabela<Cliente>
+    Produtos: Tabela<Produto>
+    Compras: Tabela<Compra>
 }
 
 let salvarTabela tabela =
@@ -39,19 +41,37 @@ let criarTabelaParaAplicacao<'e> diretorioBase arquivo dadosIniciais =
     | true -> carregarTabela<'e> arquivoCompleto
     | false -> inicializarTabela arquivoCompleto dadosIniciais
 
-let inteirosIniciais =
+let clientesIniciais=
     [
-    for valor in 1..100 
-        do 
-        if valor % 2 = 0 then 
-            yield valor
-            yield valor * valor * valor
+        {
+            Id = 1
+            Idade = 23
+            Nome = "Joãozinho"
+            Sobrenome = "Silva"
+            CPF = "021231231"
+            Email = "teste"
+            Telefone = "2131"
+            Endereco = "Rua de testes"
+        }
     ]
 
-let inicializarContexto diretorioBase =
+let obterContexto() =
+    let diretorioBase = Configuracoes.diretorioTabelas
     {
-        Inteiros = criarTabelaParaAplicacao diretorioBase "/Inteiros.json" 
-                    inteirosIniciais
-        Textos = criarTabelaParaAplicacao diretorioBase "/Textos.json" 
-                    [ "teste" ; "texto"]
+        Clientes = criarTabelaParaAplicacao 
+                        diretorioBase 
+                        "/Clientes.json" 
+                        clientesIniciais
+
+        Produtos = criarTabelaParaAplicacao 
+                        diretorioBase 
+                        "/Produtos.json" 
+                        []
+                                    
+        Compras = criarTabelaParaAplicacao 
+                        diretorioBase 
+                        "/Compras.json" 
+                        []
     }
+
+
