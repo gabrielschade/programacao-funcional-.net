@@ -48,10 +48,20 @@ let clientesIniciais=
             Idade = 23
             Nome = "Joãozinho"
             Sobrenome = "Silva"
-            CPF = "021231231"
-            Email = "teste"
-            Telefone = "2131"
-            Endereco = "Rua de testes"
+            CPF = "021.231.231-21"
+            Email = "joaozinho@teste.com"
+            Telefone = "99887766"
+            Endereco = "Rua do joãozinho"
+        };
+        {
+            Id = 2
+            Idade = 21
+            Nome = "Mariazinha"
+            Sobrenome = "Souza"
+            CPF = "123.321.123-21"
+            Email = "mariazinha@teste.com"
+            Telefone = "99981122"
+            Endereco = "Rua da mariazinha"
         }
     ]
 
@@ -74,4 +84,9 @@ let obterContexto() =
                         []
     }
 
+let atualizarDados dados tabela =
+    let tabelaComNovosDados = 
+        salvarTabela {tabela with Dados = dados} 
 
+    tabelaComNovosDados.Dados
+        

@@ -110,6 +110,7 @@
     <Compile Include="Wrappers.fs" />
     <Compile Include="Dominio.fs" />
     <Compile Include="Persistencia.fs" />
+    <Compile Include="Servicos.fs" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.css.map" />
