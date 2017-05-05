@@ -14,7 +14,7 @@ type ValuesController() =
        contexto.Clientes.Dados
 
     member this.Get(id) =
-        Servicos.ClienteServico.excluirCliente2 id
+        Servicos.ClienteServico.excluirCliente id
 
     member this.Post(cliente) =
         Servicos.ClienteServico.incluirCliente cliente

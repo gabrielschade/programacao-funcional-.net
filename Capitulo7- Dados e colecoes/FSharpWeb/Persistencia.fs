@@ -84,9 +84,4 @@ let obterContexto() =
                         []
     }
 
-let atualizarDados dados tabela =
-    let tabelaComNovosDados = 
-        salvarTabela {tabela with Dados = dados} 
-
-    tabelaComNovosDados.Dados
         
