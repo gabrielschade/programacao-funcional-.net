@@ -35,9 +35,12 @@ let inicializarTabela arquivo dadosIniciais =
     }
     salvarTabela tabela
 
-let criarTabelaParaAplicacao<'e> diretorioBase arquivo dadosIniciais =
+let criarTabelaParaAplicacao<'e> 
+        diretorioBase arquivo dadosIniciais =
+    
     let arquivoCompleto = diretorioBase ^ arquivo
-    match (Arquivo.existe arquivoCompleto) with
+    let arquivoExiste = Arquivo.existe arquivoCompleto
+    match arquivoExiste with
     | true -> carregarTabela<'e> arquivoCompleto
     | false -> inicializarTabela arquivoCompleto dadosIniciais
 

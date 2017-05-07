@@ -13,14 +13,23 @@ module ClienteServico =
                 | head::tail -> excluirClienteComId id (head::jaPercorridos) tail
                 | [] -> jaPercorridos
 
-    let atualizarClientes funcaoParaObterNovosDados =
+    let atualizarTabelaClientes funcaoParaObterNovosDados =
         let tabela = obterClientes()
         let dados = funcaoParaObterNovosDados tabela
         salvarTabela {tabela with Dados = dados}
 
     let incluirCliente cliente =
-        atualizarClientes (fun tabela -> cliente :: tabela.Dados)
+        atualizarTabelaClientes (fun tabela -> cliente :: tabela.Dados)
+
+    let atualizarCliente cliente =
+        let removeEAdiciona tabela = 
+           cliente :: (excluirClienteComId 
+                        cliente.Id 
+                        [] 
+                        tabela.Dados)
+
+        atualizarTabelaClientes (removeEAdiciona)
 
     let excluirCliente id =
-        atualizarClientes (fun tabela -> 
+        atualizarTabelaClientes (fun tabela -> 
             excluirClienteComId id [] tabela.Dados)

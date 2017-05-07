@@ -13,8 +13,10 @@ type ValuesController() =
        let contexto = Persistencia.obterContexto()
        contexto.Clientes.Dados
 
-    member this.Get(id) =
-        Servicos.ClienteServico.excluirCliente id
-
     member this.Post(cliente) =
         Servicos.ClienteServico.incluirCliente cliente
+
+    [<HttpDelete>]
+    member this.Delete(id) =
+        Servicos.ClienteServico.excluirCliente id
+
