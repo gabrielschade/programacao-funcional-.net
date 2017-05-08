@@ -63,7 +63,7 @@ let clientesIniciais=
             Sobrenome = "Souza"
             CPF = "123.321.123-21"
             Email = "mariazinha@teste.com"
-            Telefone = "99981122"
+            Telefone = "99881122"
             Endereco = "Rua da mariazinha"
         }
     ]

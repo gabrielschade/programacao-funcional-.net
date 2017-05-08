@@ -6,30 +6,30 @@ open System.Web.Http
 open Transporte.Filtros
 
 
-type ClienteController() =
+type ProdutoController() =
     inherit ApiController()
 
     [<HttpGet>]
     member this.ObterTodos() = 
-       ClienteServico.obterTodos()
+       ProdutoServico.obterTodos()
 
     [<HttpGet>]
     member this.ObterPorId(id) = 
-       ClienteServico.obterPorId id
+       ProdutoServico.obterPorId id
 
     [<HttpGet>]
     member this.ObterPor( [<FromUri>] filtro) = 
-       ClienteServico.obterPor filtro
+       ProdutoServico.obterPor filtro
    
 
     [<HttpPost>]
-    member this.Salvar(cliente) =
-        ClienteServico.incluirCliente cliente
+    member this.Salvar(produto) =
+        ProdutoServico.incluirProduto produto
 
     [<HttpPut>]
-    member this.Atualizar(cliente) =
-        ClienteServico.atualizarCliente cliente
+    member this.Atualizar(produto) =
+        ProdutoServico.atualizarProduto produto
 
     [<HttpDelete>]
     member this.Excluir(id) =
-        ClienteServico.excluirCliente id
+        ProdutoServico.excluirProduto id

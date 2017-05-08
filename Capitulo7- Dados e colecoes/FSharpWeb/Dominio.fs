@@ -20,7 +20,4 @@ type Produto = {
 
 type Compra = {
     Id: int
-    ProdutoId: int
-    ClienteId: int
-    PrecoPago: double
 }

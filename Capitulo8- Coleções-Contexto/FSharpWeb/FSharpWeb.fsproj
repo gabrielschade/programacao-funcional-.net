@@ -110,7 +110,10 @@
     <Compile Include="Wrappers.fs" />
     <Compile Include="Dominio.fs" />
     <Compile Include="Persistencia.fs" />
-    <Compile Include="Servicos.fs" />
+    <Compile Include="Transporte.fs" />
+    <Compile Include="EntidadeServico.fs" />
+    <Compile Include="ClienteServico.fs" />
+    <Compile Include="ProdutoServico.fs" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.css.map" />
@@ -133,8 +136,8 @@
     <None Include="fonts\glyphicons-halflings-regular.svg" />
     <None Include="fonts\glyphicons-halflings-regular.eot" />
     <Compile Include="Controllers\HomeController.fs" />
-    <Compile Include="Controllers\ValuesController.fs" />
     <Compile Include="Controllers\ClienteController.fs" />
+    <Compile Include="Controllers\ProdutoController.fs" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\OlaMundo.cshtml" />
