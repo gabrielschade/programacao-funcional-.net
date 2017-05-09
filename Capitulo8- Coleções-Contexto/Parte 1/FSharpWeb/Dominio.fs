@@ -19,6 +19,15 @@ type Produto = {
     Preco: double
 }
 
+type ItemCompra = {
+    ProdutoId: int
+    Quantidade: double
+    ValorTotal: double
+}
+
 type Compra = {
     Id: int
+    ClienteId: int
+    Itens: ItemCompra list
+    ValorTotal: double
 }
