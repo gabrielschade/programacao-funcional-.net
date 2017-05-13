@@ -45,6 +45,14 @@ let obterDoBancoPorId id =
     obterProdutos().Dados 
     |> List.tryFind (fun produto -> produto.Id = id)
 
+let obterDoBancoPorListaId ids =
+    let buscarIdNaLista produtoId = 
+        ids 
+        |> List.exists (fun id -> id = produtoId )
+
+    obterProdutos().Dados
+    |> List.filter (fun produto -> buscarIdNaLista produto.Id )
+
 let obterDoBancoPorFiltro (filtro : ProdutoFiltro) = 
     filtrarTabelaProdutosPor 
         (fun produto -> 
@@ -63,13 +71,17 @@ let excluirProduto =
     excluirProdutoDoBanco
     >> transformarListaEmResposta
 
-let obterTodos() =
+let obterTodos =
     obterTodosDoBanco
     >> transformarListaEmResposta
 
 let obterPorId =
     obterDoBancoPorId
     >> Option.map (ProdutoResposta.transformar)
+
+let obterPorListaId =
+    obterDoBancoPorListaId
+    >> transformarListaEmResposta
 
 let obterPor =
     obterDoBancoPorFiltro

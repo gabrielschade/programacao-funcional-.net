@@ -17,6 +17,10 @@ type CompraController() =
     member this.ObterPorId(id) = 
        CompraServico.obterPorId id
 
+    [<HttpGet>]
+    member this.ObterPor(  [<FromUri>]  filtro) =
+        CompraServico.obterPor filtro
+
     [<HttpPost>]
     member this.Salvar(compra) =
         CompraServico.incluirCompra compra

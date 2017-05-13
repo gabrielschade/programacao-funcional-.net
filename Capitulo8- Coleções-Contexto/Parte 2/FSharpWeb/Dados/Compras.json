@@ -1,1 +1,1 @@
-[]
+[{"Id":1,"ClienteId":1,"Itens":[{"ProdutoId":1,"Quantidade":2.0,"ValorTotal":400.0},{"ProdutoId":2,"Quantidade":1.0,"ValorTotal":80.0}],"ValorTotal":480.0}]

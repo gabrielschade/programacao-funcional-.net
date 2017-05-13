@@ -15,6 +15,14 @@ module Filtros =
         PrecoMaximo : double
     }
 
+    [<CLIMutable>]
+    type CompraFiltro = {
+        ValorMinimo : double
+        ClienteNome: string
+        ClienteCPF: string
+        ProdutoDescricao: string
+    }
+
 module Respostas =
     open Dominio
     open Operadores
@@ -57,11 +65,26 @@ module Respostas =
         Produto: ProdutoResposta
         Quantidade: double
         ValorTotal: double
-    }
+    } with
+      static member
+        transformar funcaoObterProduto (itemCompra: ItemCompra)=
+        {
+            Produto = funcaoObterProduto itemCompra
+            Quantidade = itemCompra.Quantidade
+            ValorTotal = itemCompra.ValorTotal
+        }
 
     type CompraResposta = {
         Id: int
         Cliente: ClienteResposta       
-        Itens: ItemCompra list
+        Itens: ItemCompraResposta list
         ValorTotal: double
-    }
+    } with
+      static member
+        transformar funcaoObterCliente funcaoObterItens (compra:Compra) =
+        {
+            Id = compra.Id
+            Cliente = funcaoObterCliente compra
+            Itens = funcaoObterItens compra
+            ValorTotal = compra.ValorTotal
+        }

@@ -67,7 +67,7 @@ let excluirCliente =
     excluirClienteDoBanco
     >> transformarListaEmResposta
 
-let obterTodos() = 
+let obterTodos = 
     obterTodosDoBanco
     >> transformarListaEmResposta
 
