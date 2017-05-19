@@ -5,6 +5,7 @@ open Dominio
 open Persistencia
 open Transporte.Filtros
 open Transporte.Respostas
+open System.Globalization
 
 let obterClientes() = 
     obterContexto().Clientes
@@ -55,12 +56,55 @@ let atualizarClienteNoBanco cliente =
 
     atualizarTabelaClientes (removeEAdiciona)
 
+let primeiraLetraMaiuscula nome =
+    CultureInfo.CurrentCulture
+               .TextInfo
+               .ToTitleCase nome
+
+let transformarInicialNomeEmMaiusculo 
+    (cliente:Cliente) =
+       { 
+        cliente with 
+            Nome = primeiraLetraMaiuscula cliente.Nome
+       }
+
+let verificaSeClienteExiste (cliente:Cliente) =
+    let clienteDoBanco = obterDoBancoPorId cliente.Id
+    match clienteDoBanco with
+    | Some clienteExistente -> cliente
+    | None -> raise (new System.Collections.Generic.KeyNotFoundException())
+
+let verificaNomeOuSobrenomeEmBranco (cliente:Cliente) =
+    match cliente with
+    | cliente when !!cliente.Nome -> 
+        invalidArg "Nome" "É necessário preencher"
+
+    | cliente when !!cliente.Sobrenome -> 
+        invalidArg "Sobrenome" "É necessário preencher"
+
+    | _ -> cliente
+
+let verificaFormatoEmail (cliente:Cliente) =
+    match cliente with
+    | cliente when cliente.Email <~ "@" -> cliente
+    | _ -> raise (new System.FormatException("Email em formato incorreto"))
+
+let verificaFormatoCPF (cliente:Cliente) =
+    match cliente with
+    | cliente when cliente.CPF.Length = 14 -> cliente
+    | _ -> raise (new System.FormatException("CPF em formato incorreto"))
+
 let incluirCliente =
     incluirClienteNoBanco
     >> transformarListaEmResposta
 
 let atualizarCliente =
-    atualizarClienteNoBanco
+    verificaSeClienteExiste
+    >> verificaNomeOuSobrenomeEmBranco
+    >> verificaFormatoEmail
+    >> verificaFormatoCPF
+    >> transformarInicialNomeEmMaiusculo
+    >> atualizarClienteNoBanco
     >> transformarListaEmResposta
 
 let excluirCliente = 

@@ -20,7 +20,6 @@ type ClienteController() =
     [<HttpGet>]
     member this.ObterPor( [<FromUri>] filtro) = 
        ClienteServico.obterPor filtro
-   
 
     [<HttpPost>]
     member this.Salvar(cliente) =
