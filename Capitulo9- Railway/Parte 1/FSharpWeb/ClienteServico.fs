@@ -72,27 +72,23 @@ let verificaSeClienteExiste (cliente:Cliente) =
     let clienteDoBanco = obterDoBancoPorId cliente.Id
     match clienteDoBanco with
     | Some clienteExistente -> cliente
-    | None -> raise (new System.Collections.Generic.KeyNotFoundException())
+    | None -> raise (System.Collections.Generic.KeyNotFoundException())
 
 let verificaNomeOuSobrenomeEmBranco (cliente:Cliente) =
     match cliente with
-    | cliente when !!cliente.Nome -> 
-        invalidArg "Nome" "É necessário preencher"
-
-    | cliente when !!cliente.Sobrenome -> 
-        invalidArg "Sobrenome" "É necessário preencher"
-
+    | cliente when !!cliente.Nome || !!cliente.Sobrenome-> 
+        invalidArg "Nome ou Sobrenome" "É necessário preencher"
     | _ -> cliente
 
 let verificaFormatoEmail (cliente:Cliente) =
     match cliente with
     | cliente when cliente.Email <~ "@" -> cliente
-    | _ -> raise (new System.FormatException("Email em formato incorreto"))
+    | _ -> invalidArg "E-mail" "Formato incorreto"
 
 let verificaFormatoCPF (cliente:Cliente) =
     match cliente with
     | cliente when cliente.CPF.Length = 14 -> cliente
-    | _ -> raise (new System.FormatException("CPF em formato incorreto"))
+    | _ -> invalidArg "CPF" "Formato incorreto"
 
 let incluirCliente =
     incluirClienteNoBanco

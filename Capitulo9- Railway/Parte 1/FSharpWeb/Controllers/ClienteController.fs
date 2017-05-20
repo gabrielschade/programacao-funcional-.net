@@ -26,8 +26,14 @@ type ClienteController() =
         ClienteServico.incluirCliente cliente
 
     [<HttpPut>]
-    member this.Atualizar(cliente) =
-        ClienteServico.atualizarCliente cliente
+    member this.Atualizar(cliente) : IHttpActionResult =
+        try
+            this.Ok (ClienteServico.atualizarCliente cliente) 
+            :> IHttpActionResult
+        with
+        | :? System.ArgumentException as erro-> 
+            this.BadRequest(erro.Message) 
+            :> IHttpActionResult
 
     [<HttpDelete>]
     member this.Excluir(id) =
