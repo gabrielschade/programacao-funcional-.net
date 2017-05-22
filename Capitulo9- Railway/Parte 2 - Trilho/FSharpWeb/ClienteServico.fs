@@ -1,6 +1,7 @@
 ﻿module ClienteServico
 
 open Operadores
+open Trilhos
 open Dominio
 open Persistencia
 open Transporte.Filtros
@@ -94,13 +95,17 @@ let incluirCliente =
     incluirClienteNoBanco
     >> transformarListaEmResposta
 
-let atualizarCliente =
+let atualizarClienteAbordagemExcecao =
     verificaSeClienteExiste
     >> verificaNomeOuSobrenomeEmBranco
     >> verificaFormatoEmail
     >> verificaFormatoCPF
     >> transformarInicialNomeEmMaiusculo
     >> atualizarClienteNoBanco
+    >> transformarListaEmResposta
+
+let atualizarCliente =
+    atualizarClienteNoBanco
     >> transformarListaEmResposta
 
 let excluirCliente = 

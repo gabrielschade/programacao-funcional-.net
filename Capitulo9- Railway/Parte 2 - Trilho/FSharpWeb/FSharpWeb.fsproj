@@ -108,6 +108,7 @@
     <Compile Include="Configuracoes.fs" />
     <Compile Include="Operadores.fs" />
     <Compile Include="Wrappers.fs" />
+    <Compile Include="Trilhos.fs" />
     <Compile Include="Dominio.fs" />
     <Compile Include="Persistencia.fs" />
     <Compile Include="Transporte.fs" />
