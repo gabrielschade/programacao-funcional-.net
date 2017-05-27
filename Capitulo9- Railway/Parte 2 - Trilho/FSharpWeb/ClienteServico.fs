@@ -72,41 +72,37 @@ let transformarInicialNomeEmMaiusculo
 let verificaSeClienteExiste (cliente:Cliente) =
     let clienteDoBanco = obterDoBancoPorId cliente.Id
     match clienteDoBanco with
-    | Some clienteExistente -> cliente
-    | None -> raise (System.Collections.Generic.KeyNotFoundException())
+    | Some clienteExistente -> cliente |> Sucesso
+    | None -> Falha ("Cliente não cadastrado no banco de dados")
 
 let verificaNomeOuSobrenomeEmBranco (cliente:Cliente) =
     match cliente with
     | cliente when !!cliente.Nome || !!cliente.Sobrenome-> 
-        invalidArg "Nome ou Sobrenome" "É necessário preencher"
-    | _ -> cliente
+        Falha "É necessário preencher o nome e o sobrenome"
+    | _ -> cliente |> Sucesso
 
 let verificaFormatoEmail (cliente:Cliente) =
     match cliente with
-    | cliente when cliente.Email <~ "@" -> cliente
-    | _ -> invalidArg "E-mail" "Formato incorreto"
+    | cliente when cliente.Email <~ "@" -> cliente |> Sucesso
+    | _ -> Falha "E-mail com formato incorreto"
 
 let verificaFormatoCPF (cliente:Cliente) =
     match cliente with
-    | cliente when cliente.CPF.Length = 14 -> cliente
-    | _ -> invalidArg "CPF" "Formato incorreto"
+    | cliente when cliente.CPF.Length = 14 -> cliente |> Sucesso
+    | _ -> Falha "CPF com formato incorreto"
 
 let incluirCliente =
     incluirClienteNoBanco
     >> transformarListaEmResposta
 
-let atualizarClienteAbordagemExcecao =
-    verificaSeClienteExiste
-    >> verificaNomeOuSobrenomeEmBranco
-    >> verificaFormatoEmail
-    >> verificaFormatoCPF
-    >> transformarInicialNomeEmMaiusculo
-    >> atualizarClienteNoBanco
-    >> transformarListaEmResposta
-
 let atualizarCliente =
-    atualizarClienteNoBanco
-    >> transformarListaEmResposta
+    verificaSeClienteExiste
+    >>= verificaNomeOuSobrenomeEmBranco
+    >>= verificaFormatoEmail
+    >>= verificaFormatoCPF
+    >> (<!>) transformarInicialNomeEmMaiusculo
+    >> (<!>) atualizarClienteNoBanco
+    >> (<!>) transformarListaEmResposta
 
 let excluirCliente = 
     excluirClienteDoBanco

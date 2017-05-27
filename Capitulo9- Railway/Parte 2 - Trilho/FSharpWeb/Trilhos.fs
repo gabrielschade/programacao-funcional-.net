@@ -11,20 +11,26 @@ let map funcao valor =
 
 let (<!>) = map 
 
-let apply fOpt xOpt = 
-    match fOpt,xOpt with
-    | Some f, Some x -> Some (f x)
-    | _ -> None
+let apply funcao valor =
+    match funcao, valor with
+    | Sucesso f, Sucesso n -> Sucesso (f n)
+    | _ , Falha erro -> Falha erro
+    | Falha erro, _ -> Falha erro
 
-let resultOption =  
-    let (<*>) = apply
-    (Some (+)) <*> (Some 2) <*> (Some 3)
+let (<*>) = apply
 
-let teste =
-    let x = apply (Some (+))
-    let y = x (Some 5)
-    let z = apply (y)
-    let v = z (Some 3)
-    v
+let bind funcao valor =
+    match valor with
+    | Sucesso n -> funcao n
+    | Falha erro -> Falha erro
+
+let (|>=) valor funcao = 
+    valor |> bind funcao
+
+let (>>=) funcao1 funcao2 =
+    funcao1 
+    >> bind funcao2
 
     
+    
+

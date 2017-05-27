@@ -4,6 +4,7 @@ open System
 open System.Net.Http
 open System.Web.Http
 open Transporte.Filtros
+open Trilhos
 
 
 type ClienteController() =
@@ -27,13 +28,10 @@ type ClienteController() =
 
     [<HttpPut>]
     member this.Atualizar(cliente) : IHttpActionResult =
-        try
-            this.Ok (ClienteServico.atualizarCliente cliente) 
-            :> IHttpActionResult
-        with
-        | :? System.ArgumentException as erro-> 
-            this.BadRequest(erro.Message) 
-            :> IHttpActionResult
+        let resultado = ClienteServico.atualizarCliente cliente
+        match resultado with
+        | Sucesso r -> this.Ok(r) :> IHttpActionResult
+        | Falha erro -> this.BadRequest(erro) :> IHttpActionResult
 
     [<HttpDelete>]
     member this.Excluir(id) =
