@@ -1,14 +1,31 @@
-namespace FSharpWeb.Controllers
+﻿namespace FSharpWeb.Controllers
 
 open System
 open System.Collections.Generic
 open System.Linq
-open System.Net.Http
-open System.Web.Http
+open System.Threading.Tasks
+open Microsoft.AspNetCore.Mvc
 
-type ValuesController() =
-    inherit ApiController()
-    let values = [|"value1";"value2"|]
+[<Route("api/[controller]")>]
+type ValuesController () =
+    inherit Controller()
 
-    member this.Get() = 
-        values
+    [<HttpGet>]
+    member this.Get() =
+        [|"value1"; "value2"|]
+
+    [<HttpGet("{id}")>]
+    member this.Get(id:int) =
+        "value"
+
+    [<HttpPost>]
+    member this.Post([<FromBody>]value:string) =
+        ()
+
+    [<HttpPut("{id}")>]
+    member this.Put(id:int, [<FromBody>]value:string ) =
+        ()
+
+    [<HttpDelete("{id}")>]
+    member this.Delete(id:int) =
+        ()

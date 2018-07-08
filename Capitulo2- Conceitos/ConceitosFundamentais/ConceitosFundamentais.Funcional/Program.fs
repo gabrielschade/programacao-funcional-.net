@@ -25,10 +25,4 @@ let main argv =
         printfn "%b" dataEstaNoPeriodo
 
     Console.ReadKey() |> ignore
-
- 
-    
-
-
-
     0

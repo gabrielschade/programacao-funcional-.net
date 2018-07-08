@@ -2,11 +2,12 @@
 
 open System
 open System.Net.Http
-open System.Web.Http
 open Servicos
+open Microsoft.AspNetCore.Mvc
 
+[<Route("api/[controller]/[action]")>]
 type ClienteController() =
-    inherit ApiController()
+    inherit Controller()
 
     [<HttpGet>]
     member this.ObterTodos() = 

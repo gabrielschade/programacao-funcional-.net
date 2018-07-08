@@ -1,11 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2018
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConceitosFundamentais", "ConceitosFundamentais\ConceitosFundamentais.csproj", "{1722F7BB-7200-406D-83B3-8B5D6AADA1FC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConceitosFundamentais.NetFramework", "ConceitosFundamentais.NetFramework\ConceitosFundamentais.NetFramework.csproj", "{1722F7BB-7200-406D-83B3-8B5D6AADA1FC}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ConceitosFundamentais.Funcional", "ConceitosFundamentais.Funcional\ConceitosFundamentais.Funcional.fsproj", "{F7B3E5FE-D06C-4E14-AEEC-F092152E4748}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ConceitosFundamentais.Funcional.NetFramework", "ConceitosFundamentais.Funcional.NetFramework\ConceitosFundamentais.Funcional.NetFramework.fsproj", "{F7B3E5FE-D06C-4E14-AEEC-F092152E4748}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConceitosFundamentais", "ConceitosFundamentais\ConceitosFundamentais.csproj", "{BCE33079-62C5-4B12-8297-7FFBB378AA43}"
+EndProject
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "ConceitosFundamentais.Funcional", "ConceitosFundamentais.Funcional\ConceitosFundamentais.Funcional.fsproj", "{94D2807E-C79A-47F0-A6AB-47BD3309939F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NetFramework", "NetFramework", "{A67B1150-B02C-4C02-8A2F-005AEC0465B1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NetCore", "NetCore", "{F2F80012-E8FB-42FB-9EA7-85B411B1DF7D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,8 +29,25 @@ Global
 		{F7B3E5FE-D06C-4E14-AEEC-F092152E4748}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7B3E5FE-D06C-4E14-AEEC-F092152E4748}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7B3E5FE-D06C-4E14-AEEC-F092152E4748}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCE33079-62C5-4B12-8297-7FFBB378AA43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCE33079-62C5-4B12-8297-7FFBB378AA43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCE33079-62C5-4B12-8297-7FFBB378AA43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCE33079-62C5-4B12-8297-7FFBB378AA43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94D2807E-C79A-47F0-A6AB-47BD3309939F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94D2807E-C79A-47F0-A6AB-47BD3309939F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94D2807E-C79A-47F0-A6AB-47BD3309939F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94D2807E-C79A-47F0-A6AB-47BD3309939F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1722F7BB-7200-406D-83B3-8B5D6AADA1FC} = {A67B1150-B02C-4C02-8A2F-005AEC0465B1}
+		{F7B3E5FE-D06C-4E14-AEEC-F092152E4748} = {A67B1150-B02C-4C02-8A2F-005AEC0465B1}
+		{BCE33079-62C5-4B12-8297-7FFBB378AA43} = {F2F80012-E8FB-42FB-9EA7-85B411B1DF7D}
+		{94D2807E-C79A-47F0-A6AB-47BD3309939F} = {F2F80012-E8FB-42FB-9EA7-85B411B1DF7D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0D0A17E6-197B-404D-98AE-BBE0FC8DB17B}
 	EndGlobalSection
 EndGlobal

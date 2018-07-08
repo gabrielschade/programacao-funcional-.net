@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Funcoes
 {
@@ -23,7 +21,7 @@ namespace Funcoes
 
             numerosPares = numeros.Where(metodoParaFiltrar);
             numerosPares = numeros.Where(metodoParaFiltrarViaLambda);
-            numerosPares = numeros.Where( numero => numero % 2 == 0);
+            numerosPares = numeros.Where(numero => numero % 2 == 0);
         }
     }
 }

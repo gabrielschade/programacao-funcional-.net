@@ -1,11 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2018
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tipos", "Tipos\Tipos.csproj", "{54D3347E-885A-4311-AD46-9D367FDA1CB8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tipos.NetFramework", "Tipos.NetFramework\Tipos.NetFramework.csproj", "{54D3347E-885A-4311-AD46-9D367FDA1CB8}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Tipos.Funcional", "Tipos.Funcional\Tipos.Funcional.fsproj", "{AA94F363-2DC2-47AA-BCA9-DEEAA9931D75}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Tipos.Funcional.NetFramework", "Tipos.Funcional.NetFramework\Tipos.Funcional.NetFramework.fsproj", "{AA94F363-2DC2-47AA-BCA9-DEEAA9931D75}"
+EndProject
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Tipos.Funcional", "Tipos.Funcional\Tipos.Funcional.fsproj", "{241C2914-51FF-4B44-8CC0-566EADC52E87}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tipos", "Tipos\Tipos.csproj", "{3CD97D1F-6795-4D18-B3CD-BA4101AA8424}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NetFramework", "NetFramework", "{F9C44E79-B82A-43FE-AB52-23CCE1ECDCB6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NetCore", "NetCore", "{C2CD4EA2-D238-4E2A-AE56-FD50A38A8D7B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,8 +29,25 @@ Global
 		{AA94F363-2DC2-47AA-BCA9-DEEAA9931D75}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA94F363-2DC2-47AA-BCA9-DEEAA9931D75}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA94F363-2DC2-47AA-BCA9-DEEAA9931D75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{241C2914-51FF-4B44-8CC0-566EADC52E87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{241C2914-51FF-4B44-8CC0-566EADC52E87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{241C2914-51FF-4B44-8CC0-566EADC52E87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{241C2914-51FF-4B44-8CC0-566EADC52E87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CD97D1F-6795-4D18-B3CD-BA4101AA8424}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CD97D1F-6795-4D18-B3CD-BA4101AA8424}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CD97D1F-6795-4D18-B3CD-BA4101AA8424}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CD97D1F-6795-4D18-B3CD-BA4101AA8424}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{54D3347E-885A-4311-AD46-9D367FDA1CB8} = {F9C44E79-B82A-43FE-AB52-23CCE1ECDCB6}
+		{AA94F363-2DC2-47AA-BCA9-DEEAA9931D75} = {F9C44E79-B82A-43FE-AB52-23CCE1ECDCB6}
+		{241C2914-51FF-4B44-8CC0-566EADC52E87} = {C2CD4EA2-D238-4E2A-AE56-FD50A38A8D7B}
+		{3CD97D1F-6795-4D18-B3CD-BA4101AA8424} = {C2CD4EA2-D238-4E2A-AE56-FD50A38A8D7B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1D8547A7-58B5-41FF-8FF8-BEDD40C95A63}
 	EndGlobalSection
 EndGlobal

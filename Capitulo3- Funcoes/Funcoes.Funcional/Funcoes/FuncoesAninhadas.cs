@@ -10,12 +10,9 @@ namespace Funcoes
     {
         public void EscreveSeNumeroEParOuImpar(int numero)
         {
-            Func<bool> verificaSeONumeroEPar = () => numero % 2 == 0;
-            Action escreveNumeroPar = 
-                () => Console.WriteLine(string.Format("O número {0} é par", numero));
-
-            Action escreveNumeroImpar =
-                () => Console.WriteLine(string.Format("O número {0} é impar", numero));
+            bool verificaSeONumeroEPar() => numero % 2 == 0;
+            void escreveNumeroPar() => Console.WriteLine(string.Format("O número {0} é par", numero));
+            void escreveNumeroImpar() => Console.WriteLine(string.Format("O número {0} é impar", numero));
 
             if (verificaSeONumeroEPar())
                 escreveNumeroPar();

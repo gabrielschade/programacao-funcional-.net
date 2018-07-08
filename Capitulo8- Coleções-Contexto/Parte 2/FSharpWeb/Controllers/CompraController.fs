@@ -1,13 +1,10 @@
 ﻿namespace FSharpWeb.Controllers
 
-open System
-open System.Net.Http
-open System.Web.Http
-open Transporte.Filtros
+open Microsoft.AspNetCore.Mvc
 
-
+[<Route("api/[controller]/[action]")>]
 type CompraController() =
-    inherit ApiController()
+    inherit Controller()
 
     [<HttpGet>]
     member this.ObterTodos() = 
@@ -18,7 +15,7 @@ type CompraController() =
        CompraServico.obterPorId id
 
     [<HttpGet>]
-    member this.ObterPor(  [<FromUri>]  filtro) =
+    member this.ObterPor(  [<FromQuery>]  filtro) =
         CompraServico.obterPor filtro
 
     [<HttpPost>]

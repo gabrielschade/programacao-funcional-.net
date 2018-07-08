@@ -2,13 +2,13 @@
 
 open System
 open System.Net.Http
-open System.Web.Http
 open Transporte.Filtros
 open Trilhos
+open Microsoft.AspNetCore.Mvc
 
-
+[<Route("api/[controller]/[action]")>]
 type ClienteController() =
-    inherit ApiController()
+    inherit Controller()
 
     [<HttpGet>]
     member this.ObterTodos() = 
@@ -19,7 +19,7 @@ type ClienteController() =
        ClienteServico.obterPorId id
 
     [<HttpGet>]
-    member this.ObterPor( [<FromUri>] filtro) = 
+    member this.ObterPor( [<FromQuery>] filtro) = 
        ClienteServico.obterPor filtro
 
     [<HttpPost>]
@@ -27,11 +27,11 @@ type ClienteController() =
         ClienteServico.incluirCliente cliente
 
     [<HttpPut>]
-    member this.Atualizar(cliente) : IHttpActionResult =
+    member this.Atualizar(cliente) : IActionResult =
         let resultado = ClienteServico.atualizarCliente cliente
         match resultado with
-        | Sucesso r -> this.Ok(r) :> IHttpActionResult
-        | Falha erro -> this.BadRequest(erro) :> IHttpActionResult
+        | Sucesso sucesso -> this.Ok(sucesso) :> IActionResult
+        | Falha erro -> this.BadRequest(erro) :> IActionResult
 
     [<HttpDelete>]
     member this.Excluir(id) =

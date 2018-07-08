@@ -1,13 +1,14 @@
-namespace FSharpWeb.Controllers
+﻿namespace FSharpWeb.Controllers
 
 open System
 open System.Collections.Generic
 open System.Linq
 open System.Net.Http
-open System.Web.Http
+open Microsoft.AspNetCore.Mvc
 
+[<Route("api/[controller]")>]
 type ValuesController() =
-    inherit ApiController()
+    inherit Controller()
 
     member this.Get() = 
        let contexto = Persistencia.obterContexto()

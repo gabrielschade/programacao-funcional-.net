@@ -15,9 +15,9 @@ namespace ConceitosFundamentais
 
         static void ExemploComPeriodoImutavel()
         {
-            PeriodoDeTempoImutavel periodo = 
-                new PeriodoDeTempoImutavel( DateTime.Parse("20/08/2016")
-                                          , DateTime.Parse("31/08/2016") );
+            PeriodoDeTempoImutavel periodo =
+                new PeriodoDeTempoImutavel(DateTime.Parse("20/08/2016")
+                                          , DateTime.Parse("31/08/2016"));
 
             DateTime[] datasParaTeste = new DateTime[]
             {
@@ -30,7 +30,7 @@ namespace ConceitosFundamentais
             foreach (DateTime dataParaTestar in datasParaTeste)
             {
                 bool resultadoDaVerificacao =
-                    PeriodoDeTempoImutavel.VerificarSeDataEstaEntreOPeriodo(periodo,dataParaTestar);
+                    PeriodoDeTempoImutavel.VerificarSeDataEstaEntreOPeriodo(periodo, dataParaTestar);
                 Console.WriteLine(resultadoDaVerificacao);
             }
 
@@ -109,7 +109,7 @@ namespace ConceitosFundamentais
 
             if (numeroPar)
                 resultado = 2;
-            
+
 
             Console.WriteLine(resultado);
             Console.ReadKey();
